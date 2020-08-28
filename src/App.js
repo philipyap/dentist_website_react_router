@@ -10,6 +10,7 @@ import {
 import Home from './Home'
 import Procedures from './Procedures'
 import Contact from './Contact'
+import WidgetShow from './WidgetShow'
 
 function App() {
   const procedures= [
@@ -36,6 +37,7 @@ function App() {
        {/* needs *exact if it has route within a route
         <Route exact path='/procedures/1' /> */}
         <Route path='/contact' component={Contact} />
+        <Route path='/widgets/:id' render={(props)=> <WidgetShow procedures={procedures}{...props}/>}/>
       </div> 
     </Router>
   );

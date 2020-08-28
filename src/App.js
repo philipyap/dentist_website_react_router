@@ -9,6 +9,9 @@ import {
 
 import Home from './Home'
 import Procedures from './Procedures'
+import Education from './Education'
+import Gallery from './Gallery'
+import Team from './Team'
 import Contact from './Contact'
 import WidgetShow from './WidgetShow'
 
@@ -27,8 +30,11 @@ function App() {
       <div className="App">
         <nav>
           {/* {' '}space to separate from links */}
-          <Link to="/">Go Back to Home</Link>{'  '} 
-          <Link to="/procedures">See our Procedures</Link>{'  '}
+          <Link to="/">Home</Link>{'  '} 
+          <Link to="/procedures">Procedures</Link>{'  '}
+          <Link to="/education">Education</Link>{'  '}
+          <Link to="/gallery">Gallery</Link>{'  '}
+          <Link to="/team">Our Team</Link>{'  '}
           <Link to="/contact">Contact Us</Link>{' '}
         </nav>
         {/* *exact on home route  */}
@@ -36,6 +42,9 @@ function App() {
         <Route path='/procedures' render={()=> <Procedures procedures={procedures}/>} />
        {/* needs *exact if it has route within a route
         <Route exact path='/procedures/1' /> */}
+        <Route path='/education' component={Education} />
+        <Route path='/gallery' component={Gallery} />
+        <Route path='/team' component={Team} />
         <Route path='/contact' component={Contact} />
         <Route path='/widgets/:id' render={(props)=> <WidgetShow procedures={procedures}{...props}/>}/>
       </div> 

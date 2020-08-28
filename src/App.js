@@ -24,6 +24,12 @@ function App() {
     "Implante",
     "Fillings"
   ]
+  const team= [
+    "Julia M, MD",
+    "Bob, T, MD",
+    "Gigi, R, DA",
+    "Iris, L, DA"
+  ]
 
   return (
     <Router>
@@ -44,7 +50,7 @@ function App() {
         <Route exact path='/procedures/1' /> */}
         <Route path='/education' component={Education} />
         <Route path='/gallery' component={Gallery} />
-        <Route path='/team' component={Team} />
+        <Route path='/team' render={()=> <Team team={team}/>} />
         <Route path='/contact' component={Contact} />
         <Route path='/widgets/:id' render={(props)=> <WidgetShow procedures={procedures}{...props}/>}/>
       </div> 
